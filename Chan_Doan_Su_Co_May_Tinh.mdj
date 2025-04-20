@@ -3024,7 +3024,7 @@
 									"parentStyle": true,
 									"left": 1648,
 									"top": 965,
-									"width": 246.455078125,
+									"width": 253.6533203125,
 									"height": 13,
 									"text": "Solution"
 								},
@@ -3051,7 +3051,7 @@
 											"parentStyle": true,
 											"left": 1653,
 											"top": 988,
-											"width": 236.455078125,
+											"width": 243.6533203125,
 											"height": 13
 										},
 										{
@@ -3067,7 +3067,7 @@
 											"parentStyle": true,
 											"left": 1653,
 											"top": 1003,
-											"width": 236.455078125,
+											"width": 243.6533203125,
 											"height": 13
 										},
 										{
@@ -3083,7 +3083,7 @@
 											"parentStyle": true,
 											"left": 1653,
 											"top": 1018,
-											"width": 236.455078125,
+											"width": 243.6533203125,
 											"height": 13
 										},
 										{
@@ -3099,7 +3099,7 @@
 											"parentStyle": true,
 											"left": 1653,
 											"top": 1033,
-											"width": 236.455078125,
+											"width": 243.6533203125,
 											"height": 13
 										},
 										{
@@ -3116,7 +3116,7 @@
 											"parentStyle": true,
 											"left": 1589,
 											"top": 960,
-											"width": 236.455078125,
+											"width": 243.6533203125,
 											"height": 13
 										}
 									],
@@ -3124,7 +3124,7 @@
 									"parentStyle": true,
 									"left": 1648,
 									"top": 983,
-									"width": 246.455078125,
+									"width": 253.6533203125,
 									"height": 68
 								}
 							],
@@ -3132,7 +3132,7 @@
 							"parentStyle": false,
 							"left": 1648,
 							"top": 960,
-							"width": 246.455078125,
+							"width": 253.6533203125,
 							"height": 106,
 							"nameLabel": {
 								"$ref": "AAAAAAGWOkDNcmPIeDc="
@@ -3161,7 +3161,7 @@
 									"parentStyle": true,
 									"left": 1360,
 									"top": 757,
-									"width": 252.98046875,
+									"width": 260.1787109375,
 									"height": 13,
 									"text": "Diagnose"
 								},
@@ -3188,7 +3188,7 @@
 											"parentStyle": true,
 											"left": 1365,
 											"top": 780,
-											"width": 242.98046875,
+											"width": 250.1787109375,
 											"height": 13
 										},
 										{
@@ -3204,7 +3204,7 @@
 											"parentStyle": true,
 											"left": 1365,
 											"top": 795,
-											"width": 242.98046875,
+											"width": 250.1787109375,
 											"height": 13
 										},
 										{
@@ -3220,7 +3220,7 @@
 											"parentStyle": true,
 											"left": 1365,
 											"top": 810,
-											"width": 242.98046875,
+											"width": 250.1787109375,
 											"height": 13
 										},
 										{
@@ -3237,7 +3237,7 @@
 											"parentStyle": true,
 											"left": 1653,
 											"top": 953,
-											"width": 242.98046875,
+											"width": 250.1787109375,
 											"height": 13
 										}
 									],
@@ -3245,7 +3245,7 @@
 									"parentStyle": true,
 									"left": 1360,
 									"top": 775,
-									"width": 252.98046875,
+									"width": 260.1787109375,
 									"height": 53
 								}
 							],
@@ -3253,7 +3253,7 @@
 							"parentStyle": false,
 							"left": 1360,
 							"top": 752,
-							"width": 252.98046875,
+							"width": 260.1787109375,
 							"height": 91,
 							"nameLabel": {
 								"$ref": "AAAAAAGWOkGVF2PWPGI="
@@ -3282,7 +3282,7 @@
 									"parentStyle": true,
 									"left": 776,
 									"top": 901,
-									"width": 253.716796875,
+									"width": 273.1533203125,
 									"height": 13,
 									"text": "Hardware"
 								},
@@ -3309,7 +3309,7 @@
 											"parentStyle": true,
 											"left": 781,
 											"top": 924,
-											"width": 243.716796875,
+											"width": 263.1533203125,
 											"height": 13
 										},
 										{
@@ -3325,7 +3325,7 @@
 											"parentStyle": true,
 											"left": 781,
 											"top": 939,
-											"width": 243.716796875,
+											"width": 263.1533203125,
 											"height": 13
 										},
 										{
@@ -3341,7 +3341,7 @@
 											"parentStyle": true,
 											"left": 781,
 											"top": 954,
-											"width": 243.716796875,
+											"width": 263.1533203125,
 											"height": 13
 										},
 										{
@@ -3357,7 +3357,7 @@
 											"parentStyle": true,
 											"left": 781,
 											"top": 969,
-											"width": 243.716796875,
+											"width": 263.1533203125,
 											"height": 13
 										},
 										{
@@ -3373,7 +3373,7 @@
 											"parentStyle": true,
 											"left": 781,
 											"top": 984,
-											"width": 243.716796875,
+											"width": 263.1533203125,
 											"height": 13
 										},
 										{
@@ -3389,7 +3389,7 @@
 											"parentStyle": true,
 											"left": 781,
 											"top": 999,
-											"width": 243.716796875,
+											"width": 263.1533203125,
 											"height": 13
 										}
 									],
@@ -3397,7 +3397,7 @@
 									"parentStyle": true,
 									"left": 776,
 									"top": 919,
-									"width": 253.716796875,
+									"width": 273.1533203125,
 									"height": 98
 								}
 							],
@@ -3405,7 +3405,7 @@
 							"parentStyle": false,
 							"left": 776,
 							"top": 896,
-							"width": 253.716796875,
+							"width": 273.1533203125,
 							"height": 121,
 							"nameLabel": {
 								"$ref": "AAAAAAGWOkZKWWPvz34="
@@ -3434,7 +3434,7 @@
 									"parentStyle": true,
 									"left": 1064,
 									"top": 829,
-									"width": 249.36865234375,
+									"width": 256.56689453125,
 									"height": 13,
 									"text": "Software"
 								},
@@ -3461,7 +3461,7 @@
 											"parentStyle": true,
 											"left": 1069,
 											"top": 852,
-											"width": 239.36865234375,
+											"width": 246.56689453125,
 											"height": 13
 										},
 										{
@@ -3477,7 +3477,7 @@
 											"parentStyle": true,
 											"left": 1069,
 											"top": 867,
-											"width": 239.36865234375,
+											"width": 246.56689453125,
 											"height": 13
 										},
 										{
@@ -3493,7 +3493,7 @@
 											"parentStyle": true,
 											"left": 1069,
 											"top": 882,
-											"width": 239.36865234375,
+											"width": 246.56689453125,
 											"height": 13
 										},
 										{
@@ -3509,7 +3509,7 @@
 											"parentStyle": true,
 											"left": 1069,
 											"top": 897,
-											"width": 239.36865234375,
+											"width": 246.56689453125,
 											"height": 13
 										},
 										{
@@ -3525,7 +3525,7 @@
 											"parentStyle": true,
 											"left": 1069,
 											"top": 912,
-											"width": 239.36865234375,
+											"width": 246.56689453125,
 											"height": 13
 										},
 										{
@@ -3541,7 +3541,7 @@
 											"parentStyle": true,
 											"left": 1069,
 											"top": 927,
-											"width": 239.36865234375,
+											"width": 246.56689453125,
 											"height": 13
 										}
 									],
@@ -3549,7 +3549,7 @@
 									"parentStyle": true,
 									"left": 1064,
 									"top": 847,
-									"width": 249.36865234375,
+									"width": 256.56689453125,
 									"height": 98
 								}
 							],
@@ -3557,7 +3557,7 @@
 							"parentStyle": false,
 							"left": 1064,
 							"top": 824,
-							"width": 249.36865234375,
+							"width": 256.56689453125,
 							"height": 121,
 							"nameLabel": {
 								"$ref": "AAAAAAGWOkZcZWP8Oag="
@@ -3703,7 +3703,7 @@
 								"$ref": "AAAAAAGWO/s71puNhjM="
 							},
 							"lineStyle": 1,
-							"points": "1200:718;1192:823"
+							"points": "1201:718;1195:823"
 						},
 						{
 							"_type": "ERDEntityView",
@@ -4001,7 +4001,7 @@
 									},
 									"font": "Arial;13;0",
 									"parentStyle": false,
-									"left": 1055,
+									"left": 1074,
 									"top": 1000,
 									"height": 13,
 									"alpha": -0.5235987755982988,
@@ -4020,7 +4020,7 @@
 								"$ref": "AAAAAAGWO/6YVZufcik="
 							},
 							"lineStyle": 2,
-							"points": "1195:1096;1195:992;1030:992",
+							"points": "1195:1096;1195:992;1049:992",
 							"nameLabel": {
 								"$ref": "AAAAAAGWO/9woZvzKNI="
 							},
@@ -5598,7 +5598,7 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"parentStyle": false,
-									"left": 1947,
+									"left": 1951,
 									"top": 1011,
 									"height": 13,
 									"alpha": 1.5707963267948966,
@@ -5616,7 +5616,7 @@
 									},
 									"font": "Arial;13;0",
 									"parentStyle": false,
-									"left": 1919,
+									"left": 1927,
 									"top": 1011,
 									"height": 13,
 									"alpha": 0.5235987755982988,
@@ -5653,7 +5653,7 @@
 								"$ref": "AAAAAAGWOkDNcmPHVME="
 							},
 							"lineStyle": 2,
-							"points": "1894:1032;2000:1032",
+							"points": "1902:1032;2000:1032",
 							"nameLabel": {
 								"$ref": "AAAAAAGWTUsPsQCGyL0="
 							},
@@ -5683,7 +5683,7 @@
 									"font": "Arial;13;1",
 									"parentStyle": true,
 									"left": 1680,
-									"top": 829,
+									"top": 813,
 									"width": 127.72998046875,
 									"height": 13,
 									"text": "Diagnose_Solution"
@@ -5710,7 +5710,7 @@
 											"font": "Arial;13;0",
 											"parentStyle": true,
 											"left": 1685,
-											"top": 852,
+											"top": 836,
 											"width": 117.72998046875,
 											"height": 13
 										},
@@ -5726,7 +5726,7 @@
 											"font": "Arial;13;0",
 											"parentStyle": true,
 											"left": 1685,
-											"top": 867,
+											"top": 851,
 											"width": 117.72998046875,
 											"height": 13
 										}
@@ -5734,7 +5734,7 @@
 									"font": "Arial;13;0",
 									"parentStyle": true,
 									"left": 1680,
-									"top": 847,
+									"top": 831,
 									"width": 127.72998046875,
 									"height": 38
 								}
@@ -5742,7 +5742,7 @@
 							"font": "Arial;13;0",
 							"parentStyle": false,
 							"left": 1680,
-							"top": 824,
+							"top": 808,
 							"width": 127.72998046875,
 							"height": 61,
 							"nameLabel": {
@@ -5789,7 +5789,7 @@
 									},
 									"font": "Arial;13;0",
 									"parentStyle": false,
-									"left": 1638,
+									"left": 1645,
 									"top": 811,
 									"height": 13,
 									"alpha": 0.5235987755982988,
@@ -5826,7 +5826,7 @@
 								"$ref": "AAAAAAGWOkGVF2PVYZQ="
 							},
 							"lineStyle": 2,
-							"points": "1613:832;1744:832;1744:960",
+							"points": "1620:832;1744:832;1744:960",
 							"nameLabel": {
 								"$ref": "AAAAAAGWTVJ3FwEftW8="
 							},
@@ -6290,8 +6290,8 @@
 								"$ref": "AAAAAAGWOkDNcmPFwWk="
 							},
 							"name": "Detail",
-							"type": "TEXT",
-							"length": 0
+							"type": "NVARCHAR",
+							"length": "MAX"
 						},
 						{
 							"_type": "ERDColumn",
@@ -6519,8 +6519,8 @@
 								"$ref": "AAAAAAGWOkGVF2PTc2Y="
 							},
 							"name": "Describe",
-							"type": "TEXT",
-							"length": 0
+							"type": "NVARCHAR",
+							"length": "MAX"
 						},
 						{
 							"_type": "ERDColumn",
@@ -6623,7 +6623,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGWOkZKWWPsrQU="
 							},
-							"name": "Type",
+							"name": "Type_Hardware",
 							"type": "NVARCHAR",
 							"length": "255"
 						},
@@ -6633,9 +6633,9 @@
 							"_parent": {
 								"$ref": "AAAAAAGWOkZKWWPsrQU="
 							},
-							"name": "Funtion",
-							"type": "TEXT",
-							"length": 0
+							"name": "Funtion_Hardware",
+							"type": "NVARCHAR",
+							"length": "MAX"
 						},
 						{
 							"_type": "ERDColumn",
@@ -6644,7 +6644,8 @@
 								"$ref": "AAAAAAGWOkZKWWPsrQU="
 							},
 							"name": "Brand",
-							"length": 0
+							"type": "NVARCHAR",
+							"length": "255"
 						},
 						{
 							"_type": "ERDColumn",
@@ -6705,8 +6706,8 @@
 								"$ref": "AAAAAAGWOkZcZGP5JbI="
 							},
 							"name": "Funtion",
-							"type": "TEXT",
-							"length": 0
+							"type": "NVARCHAR",
+							"length": "MAX"
 						},
 						{
 							"_type": "ERDColumn",
