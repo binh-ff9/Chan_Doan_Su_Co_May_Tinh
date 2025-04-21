@@ -1,4 +1,4 @@
-IF EXISTS (
+﻿IF EXISTS (
     SELECT name 
     FROM sys.databases 
     WHERE name = N'HeThongChanDoanSuCoMayTinh'
@@ -13,129 +13,125 @@ GO
 
 USE HeThongChanDoanSuCoMayTinh;
 
--- Create Category Table
+-- =====================
+-- TẠO CÁC BẢNG CHÍNH
+-- =====================
+
 CREATE TABLE Category (
-    CategoryID INT PRIMARY KEY,
-    Type_ NVARCHAR(255) NOT NULL
+    CategoryID INTEGER PRIMARY KEY,
+    Type_ NVARCHAR(255)
 );
 
--- Create Hardware Table
-CREATE TABLE Hardware (
-    HardwareID INT PRIMARY KEY IDENTITY(1,1),
-    Name_Hardware NVARCHAR(255) NOT NULL,
-    Type NVARCHAR(255),
-    Function_Hardware TEXT,
-    Brand TEXT,
-    CategoryID INT,
-    FOREIGN KEY (CategoryID) REFERENCES Category(CategoryID)
-);
-
--- Create Software Table
 CREATE TABLE Software (
-    SoftwareID INT PRIMARY KEY IDENTITY(1,1),
+    SoftwareID INTEGER IDENTITY(1,1) PRIMARY KEY,
     Name_Software NVARCHAR(255) NOT NULL,
-    Type NVARCHAR(255),
-    Function_Software TEXT,
-    Version NVARCHAR(255),
-    CategoryID INT,
+    Type_Software NVARCHAR(255) NOT NULL,
+    Funtion NVARCHAR(MAX) NOT NULL,
+    Version_ NVARCHAR(255), -- Phiên bảng
+    CategoryID INTEGER DEFAULT 1,
+    FOREIGN KEY (CategoryID) REFERENCES Category(Catem       goryID)
+);
+
+CREATE TABLE Hardware (
+    HardwareID INTEGER PRIMARY KEY,
+    Name_Hardware NVARCHAR(255),
+    Type_Hardware NVARCHAR(MAX) CHECK (Type_Hardware IN ('Ngoại vi', 'Nội Vi')),
+    Funtion_Hardware NVARCHAR(MAX),
+    Brand NVARCHAR(255),
+    CategoryID INTEGER DEFAULT 1,
     FOREIGN KEY (CategoryID) REFERENCES Category(CategoryID)
 );
 
--- Create Internet Table
 CREATE TABLE Internet (
-    InternetID INT PRIMARY KEY IDENTITY(1,1),
-    Internet_Name NVARCHAR(255) NOT NULL,
+    InternetID INTEGER PRIMARY KEY,
+    Internet_Name NVARCHAR(255),
     Describe TEXT,
-    Status NVARCHAR(255),
+    Stable NVARCHAR(255),
     Coverage NVARCHAR(255),
-    Mobile BIT,
-    CategoryID INT,
+    Mobile NVARCHAR(255) CHECK (Mobile IN (N'Di động',N'Cố định'))    ,
+    CategoryID INTEGER DEFAULT 1,
     FOREIGN KEY (CategoryID) REFERENCES Category(CategoryID)
 );
 
--- Create Diagnose Table
-CREATE TABLE Diagnose (
-    DiagnoseID INT PRIMARY KEY IDENTITY(1,1),
-    Diagnose_Name NVARCHAR(255) NOT NULL,
-    Describe TEXT
-);
-
--- Create Solution Table
-CREATE TABLE Solution (
-    SolutionID INT PRIMARY KEY IDENTITY(1,1),
-    Solution_Name NVARCHAR(255) NOT NULL,
-    Detail TEXT,
-    SuccessRate DECIMAL(5,2)
-);
-
--- Create Solution_Step Table
-CREATE TABLE Solution_Step (
-    StepID INT PRIMARY KEY IDENTITY(1,1),
-    Step_Name NVARCHAR(255) NOT NULL,
-    Detail TEXT,
-    SolutionID INT,
-    FOREIGN KEY (SolutionID) REFERENCES Solution(SolutionID)
-);
-
--- Create Issues Table
-CREATE TABLE Issues (
-    IssueID INT PRIMARY KEY IDENTITY(1,1),
-    Issue_Name NVARCHAR(255) NOT NULL,
-    Describe TEXT,
-    Level NVARCHAR(15),
-    CategoryID INT,
-    FOREIGN KEY (CategoryID) REFERENCES Category(CategoryID)
-);
-
--- Create Virus Table
 CREATE TABLE Virus (
-    VirusID INT PRIMARY KEY IDENTITY(1,1),
-    VirusName NVARCHAR(255) NOT NULL,
+    VirusID INTEGER PRIMARY KEY,
+    VirusName NVARCHAR(255),
     Type NVARCHAR(255),
     Behavior TEXT,
     Danger_Level NVARCHAR(255),
-    CategoryID INT,
+    CategoryID INTEGER,
     FOREIGN KEY (CategoryID) REFERENCES Category(CategoryID)
 );
 
--- Create Tags Table
-CREATE TABLE Tags (
-    TagID INT PRIMARY KEY IDENTITY(1,1),
-    Tag_Name NVARCHAR(255) NOT NULL
+-- =====================
+-- BẢNG VỀ LỖI & GIẢI PHÁP
+-- =====================
+
+CREATE TABLE Issues (
+    IssueID INTEGER PRIMARY KEY,
+    Issue_Name NVARCHAR(255),
+    Describe TEXT,
+    Level NVARCHAR(15),
+    CategoryID INTEGER,
+    FOREIGN KEY (CategoryID) REFERENCES Category(CategoryID)
 );
 
--- Create Diagnose_Solution (junction table)
+CREATE TABLE Diagnose (
+    DiagnoseID INTEGER PRIMARY KEY,
+    Diagnose_Name NVARCHAR(255),
+    Describe TEXT
+);
+
+CREATE TABLE Issue_Diagnose (
+    IssueID INTEGER,
+    DiagnoseID INTEGER,
+    FOREIGN KEY (IssueID) REFERENCES Issues(IssueID),
+    FOREIGN KEY (DiagnoseID) REFERENCES Diagnose(DiagnoseID)
+);
+
+CREATE TABLE Solution (
+    SolutionID INTEGER PRIMARY KEY,
+    Solution_Name NVARCHAR(255),
+    Detail TEXT,
+    SuccessRate VARCHAR(5)
+);
+
+CREATE TABLE Solution_Step (
+    StepID INTEGER PRIMARY KEY,
+    Step_Name NVARCHAR(255),
+    Tutorial NVARCHAR,
+    SolutionID INTEGER,
+    FOREIGN KEY (SolutionID) REFERENCES Solution(SolutionID)
+);
+
+CREATE TABLE Issue_Solution (
+    IssueID INTEGER,
+    SolutionID INTEGER,
+    FOREIGN KEY (IssueID) REFERENCES Issues(IssueID),
+    FOREIGN KEY (SolutionID) REFERENCES Solution(SolutionID)
+);
+
 CREATE TABLE Diagnose_Solution (
-    DiagnoseID INT,
-    SolutionID INT,
+    DiagnoseID INTEGER,
+    SolutionID INTEGER,
     PRIMARY KEY (DiagnoseID, SolutionID),
     FOREIGN KEY (DiagnoseID) REFERENCES Diagnose(DiagnoseID),
     FOREIGN KEY (SolutionID) REFERENCES Solution(SolutionID)
 );
 
--- Create Issue_Diagnose (junction table)
-CREATE TABLE Issue_Diagnose (
-    IssueID INT,
-    DiagnoseID INT,
-    PRIMARY KEY (IssueID, DiagnoseID),
-    FOREIGN KEY (IssueID) REFERENCES Issues(IssueID),
-    FOREIGN KEY (DiagnoseID) REFERENCES Diagnose(DiagnoseID)
+
+-- =====================
+-- TAGS CHO ISSUE
+-- =====================
+
+CREATE TABLE Tags (
+    TagID INTEGER PRIMARY KEY,
+    Tag_Name NVARCHAR(255)
 );
 
--- Create Issue_Solution (junction table)
-CREATE TABLE Issue_Solution (
-    IssueID INT,
-    SolutionID INT,
-    PRIMARY KEY (IssueID, SolutionID),
-    FOREIGN KEY (IssueID) REFERENCES Issues(IssueID),
-    FOREIGN KEY (SolutionID) REFERENCES Solution(SolutionID)
-);
-
--- Create Issue_Tag (junction table)
 CREATE TABLE Issue_Tag (
-    IssueID INT,
-    TagID INT,
-    PRIMARY KEY (IssueID, TagID),
+    IssueID INTEGER,
+    TagID INTEGER,
     FOREIGN KEY (IssueID) REFERENCES Issues(IssueID),
     FOREIGN KEY (TagID) REFERENCES Tags(TagID)
 );
