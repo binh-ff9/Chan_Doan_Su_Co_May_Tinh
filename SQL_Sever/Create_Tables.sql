@@ -27,39 +27,40 @@ CREATE TABLE Software (
     Name_Software NVARCHAR(255) NOT NULL,
     Type_Software NVARCHAR(255) NOT NULL,
     Funtion NVARCHAR(MAX) NOT NULL,
-    Version_ NVARCHAR(255) CHECK (Version_ IS NULL OR Lower(Version_) LIKE 'v[0-9]%'), -- Lower check khi nhập v thường hay v hoa của nhập được 
+    Version_ NVARCHAR(255) CHECK (Version_ IS NULL OR Version_ LIKE '[0-9]%'), -- Phiên bảng
     CategoryID INTEGER DEFAULT 1,
     FOREIGN KEY (CategoryID) REFERENCES Category(CategoryID),
 	UNIQUE(Name_Software, Version_)
 );
 
 CREATE TABLE Hardware (
-    HardwareID INTEGER IDENTITY(1,1) PRIMARY KEY,
-    Name_Hardware NVARCHAR(255) NOT NULL,
-    Type_Hardware NVARCHAR(MAX) CHECK (Type_Hardware IN (N'Ngoại vi', N'Nội Vi')) NOT NULL,
-    Funtion_Hardware NVARCHAR(MAX) NOT NULL,
-    CategoryID INTEGER DEFAULT 2,
+    HardwareID INTEGER PRIMARY KEY,
+    Name_Hardware NVARCHAR(255),
+    Type_Hardware NVARCHAR(MAX) CHECK (Type_Hardware IN ('Ngoại vi', 'Nội Vi')),
+    Funtion_Hardware NVARCHAR(MAX),
+    Brand NVARCHAR(255),
+    CategoryID INTEGER DEFAULT 1,
     FOREIGN KEY (CategoryID) REFERENCES Category(CategoryID)
 );
 
 CREATE TABLE Internet (
-    InternetID INTEGER IDENTITY(1,1) PRIMARY KEY,
-    Internet_Name NVARCHAR(255) UNIQUE(Internet_Name) NOT NULL,
-    Describe NVARCHAR(MAX) NOT NULL,
-    Stable NVARCHAR(255)  DEFAULT N'Ổn định' CHECK (Stable IN (N'Rất ổn định', N'Ổn định', N'Không ổn định')), -- TÍNH ỔN ĐỊNH
-	Coverage NVARCHAR(255) CHECK (Coverage IN (N'Toàn quốc', N'Vùng ven', N'Chưa xác định')), -- TÍNH BAO PHỦ
+    InternetID INTEGER PRIMARY KEY,
+    Internet_Name NVARCHAR(255),
+    Describe TEXT,
+    Stable NVARCHAR(255),
+    Coverage NVARCHAR(255),
     Mobile NVARCHAR(255) CHECK (Mobile IN (N'Di động',N'Cố định'))    ,
-    CategoryID INTEGER DEFAULT 3,
+    CategoryID INTEGER DEFAULT 1,
     FOREIGN KEY (CategoryID) REFERENCES Category(CategoryID)
 );
 
 CREATE TABLE Virus (
-    VirusID INTEGER IDENTITY(1,1) PRIMARY KEY,
+    VirusID INTEGER PRIMARY KEY,
     VirusName NVARCHAR(255),
     Type NVARCHAR(255),
     Behavior TEXT,
     Danger_Level NVARCHAR(255),
-    CategoryID INTEGER DEFAULT 4,
+    CategoryID INTEGER,
     FOREIGN KEY (CategoryID) REFERENCES Category(CategoryID)
 );
 

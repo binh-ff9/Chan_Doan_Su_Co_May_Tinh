@@ -21,3 +21,5 @@ DROP TABLE Virus;
 
 -- Bảng cha
 DROP TABLE Category;
+
+
