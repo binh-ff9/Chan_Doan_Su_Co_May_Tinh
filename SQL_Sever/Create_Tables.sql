@@ -27,40 +27,29 @@ CREATE TABLE Software (
     Name_Software NVARCHAR(255) NOT NULL,
     Type_Software NVARCHAR(255) NOT NULL,
     Funtion NVARCHAR(MAX) NOT NULL,
-    Version_ NVARCHAR(255) CHECK (Version_ IS NULL OR Version_ LIKE '[0-9]%'), -- Phiên bảng
+    Version_ NVARCHAR(255) CHECK (Version_ IS NULL OR Lower(Version_) LIKE 'v[0-9]%'), -- Lower check khi nhập v thường hay v hoa của nhập được 
     CategoryID INTEGER DEFAULT 1,
     FOREIGN KEY (CategoryID) REFERENCES Category(CategoryID),
 	UNIQUE(Name_Software, Version_)
 );
 
 CREATE TABLE Hardware (
-    HardwareID INTEGER PRIMARY KEY,
-    Name_Hardware NVARCHAR(255),
-    Type_Hardware NVARCHAR(MAX) CHECK (Type_Hardware IN ('Ngoại vi', 'Nội Vi')),
-    Funtion_Hardware NVARCHAR(MAX),
-    Brand NVARCHAR(255),
-    CategoryID INTEGER DEFAULT 1,
+    HardwareID INTEGER IDENTITY(1,1) PRIMARY KEY,
+    Name_Hardware NVARCHAR(255) NOT NULL UNIQUE,
+    Type_Hardware NVARCHAR(MAX) CHECK (Type_Hardware IN (N'Ngoại vi', N'Nội Vi')) NOT NULL,
+    Funtion_Hardware NVARCHAR(MAX) NOT NULL,
+    CategoryID INTEGER DEFAULT 2,
     FOREIGN KEY (CategoryID) REFERENCES Category(CategoryID)
 );
 
 CREATE TABLE Internet (
-    InternetID INTEGER PRIMARY KEY,
-    Internet_Name NVARCHAR(255),
-    Describe TEXT,
-    Stable NVARCHAR(255),
-    Coverage NVARCHAR(255),
+    InternetID INTEGER IDENTITY(1,1) PRIMARY KEY,
+    Internet_Name NVARCHAR(255) UNIQUE(Internet_Name) NOT NULL,
+    Describe NVARCHAR(MAX) NOT NULL,
+    Stable NVARCHAR(255)  DEFAULT N'Ổn định' CHECK (Stable IN (N'Rất ổn định', N'Ổn định', N'Không ổn định')), -- TÍNH ỔN ĐỊNH
+	Coverage NVARCHAR(255) CHECK (Coverage IN (N'Toàn quốc', N'Vùng ven', N'Chưa xác định')), -- TÍNH BAO PHỦ
     Mobile NVARCHAR(255) CHECK (Mobile IN (N'Di động',N'Cố định'))    ,
-    CategoryID INTEGER DEFAULT 1,
-    FOREIGN KEY (CategoryID) REFERENCES Category(CategoryID)
-);
-
-CREATE TABLE Virus (
-    VirusID INTEGER PRIMARY KEY,
-    VirusName NVARCHAR(255),
-    Type NVARCHAR(255),
-    Behavior TEXT,
-    Danger_Level NVARCHAR(255),
-    CategoryID INTEGER,
+    CategoryID INTEGER DEFAULT 3,
     FOREIGN KEY (CategoryID) REFERENCES Category(CategoryID)
 );
 
@@ -68,13 +57,43 @@ CREATE TABLE Virus (
 -- BẢNG VỀ LỖI & GIẢI PHÁP
 -- =====================
 
+-- Tạo bảng Issues
 CREATE TABLE Issues (
-    IssueID INTEGER PRIMARY KEY,
-    Issue_Name NVARCHAR(255),
-    Describe TEXT,
-    Level NVARCHAR(15),
-    CategoryID INTEGER,
+    IssueID INTEGER IDENTITY(1,1) PRIMARY KEY,
+    Issue_Name NVARCHAR(255) NOT NULL UNIQUE, -- Tên lỗi không trùng lặp và bắt buộc nhập
+    Describe NVARCHAR(MAX) NOT NULL,          -- Bắt buộc nhập mô tả lỗi
+    Level_ NVARCHAR(15) 
+        CHECK (Level_ IN (N'Thấp', N'Trung bình', N'Cao', N'Nguy hiểm')) 
+        DEFAULT N'Trung bình',                -- Giới hạn mức độ và đặt mặc định
+    CategoryID INTEGER NOT NULL,
     FOREIGN KEY (CategoryID) REFERENCES Category(CategoryID)
+);
+
+-- Tạo bảng Software_Issues
+CREATE TABLE Software_Issues (
+    SoftwareID INTEGER,
+    IssueID INTEGER,
+    PRIMARY KEY (SoftwareID, IssueID),
+    FOREIGN KEY (SoftwareID) REFERENCES Software(SoftwareID),
+    FOREIGN KEY (IssueID) REFERENCES Issues(IssueID)
+);
+
+-- Tạo bảng Hardware_Issues
+CREATE TABLE Hardware_Issues (
+    HardwareID INTEGER,
+    IssueID INTEGER,
+    PRIMARY KEY (HardwareID, IssueID),
+    FOREIGN KEY (HardwareID) REFERENCES Hardware(HardwareID),
+    FOREIGN KEY (IssueID) REFERENCES Issues(IssueID)
+);
+
+-- Tạo bảng Internet_Issues
+CREATE TABLE Internet_Issues (
+    InternetID INTEGER,
+    IssueID INTEGER,
+    PRIMARY KEY (InternetID, IssueID),
+    FOREIGN KEY (InternetID) REFERENCES Internet(InternetID),
+    FOREIGN KEY (IssueID) REFERENCES Issues(IssueID)
 );
 
 CREATE TABLE Diagnose (

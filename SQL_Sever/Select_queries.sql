@@ -5,7 +5,6 @@ SELECT * FROM Category;
 SELECT * FROM Software;
 SELECT * FROM Hardware;
 SELECT * FROM Internet;
-SELECT * FROM Virus;
 
 SELECT * FROM Issues;
 SELECT * FROM Diagnose;

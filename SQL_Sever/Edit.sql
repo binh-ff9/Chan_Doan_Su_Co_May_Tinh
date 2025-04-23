@@ -17,9 +17,7 @@ DROP TABLE Issues;
 DROP TABLE Software;
 DROP TABLE Hardware;
 DROP TABLE Internet;
-DROP TABLE Virus;
 
 -- Bảng cha
 DROP TABLE Category;
-
 
