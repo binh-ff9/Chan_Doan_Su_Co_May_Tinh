@@ -53,16 +53,6 @@ CREATE TABLE Internet (
     FOREIGN KEY (CategoryID) REFERENCES Category(CategoryID)
 );
 
-CREATE TABLE Virus (
-    VirusID INTEGER IDENTITY(1,1) PRIMARY KEY,
-    VirusName NVARCHAR(255),
-    Type NVARCHAR(255),
-    Behavior TEXT,
-    Danger_Level NVARCHAR(255),
-    CategoryID INTEGER DEFAULT 4,
-    FOREIGN KEY (CategoryID) REFERENCES Category(CategoryID)
-);
-
 -- =====================
 -- BẢNG VỀ LỖI & GIẢI PHÁP
 -- =====================

@@ -4,6 +4,10 @@ DROP TABLE Issue_Diagnose;
 DROP TABLE Issue_Solution;
 DROP TABLE Issue_Tag;
 
+DROP TABLE Software_Issues;
+DROP TABLE Hardware_Issues;
+DROP TABLE Internet_Issues;
+
 -- Bảng phụ
 DROP TABLE Solution_Step;
 

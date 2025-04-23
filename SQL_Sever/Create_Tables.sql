@@ -24,13 +24,10 @@ CREATE TABLE Category (
 
 CREATE TABLE Software (
     SoftwareID INTEGER IDENTITY(1,1) PRIMARY KEY,
-    Name_Software NVARCHAR(255) NOT NULL,
-    Type_Software NVARCHAR(255) NOT NULL,
+    Type_Software NVARCHAR(255) NOT NULL UNIQUE,
     Funtion NVARCHAR(MAX) NOT NULL,
-    Version_ NVARCHAR(255) CHECK (Version_ IS NULL OR Lower(Version_) LIKE 'v[0-9]%'), -- Lower check khi nhập v thường hay v hoa của nhập được 
     CategoryID INTEGER DEFAULT 1,
     FOREIGN KEY (CategoryID) REFERENCES Category(CategoryID),
-	UNIQUE(Name_Software, Version_)
 );
 
 CREATE TABLE Hardware (
@@ -98,13 +95,14 @@ CREATE TABLE Internet_Issues (
 
 CREATE TABLE Diagnose (
     DiagnoseID INTEGER PRIMARY KEY,
-    Diagnose_Name NVARCHAR(255),
-    Describe TEXT
+    Diagnose_Name NVARCHAR(MAX)
 );
 
+SELECT * FROM Issue_Diagnose;
 CREATE TABLE Issue_Diagnose (
     IssueID INTEGER,
     DiagnoseID INTEGER,
+	PRIMARY KEY (DiagnoseID, IssueID),
     FOREIGN KEY (IssueID) REFERENCES Issues(IssueID),
     FOREIGN KEY (DiagnoseID) REFERENCES Diagnose(DiagnoseID)
 );
@@ -112,14 +110,13 @@ CREATE TABLE Issue_Diagnose (
 CREATE TABLE Solution (
     SolutionID INTEGER PRIMARY KEY,
     Solution_Name NVARCHAR(255),
-    Detail TEXT,
     SuccessRate VARCHAR(5)
 );
 
 CREATE TABLE Solution_Step (
     StepID INTEGER PRIMARY KEY,
     Step_Name NVARCHAR(255),
-    Tutorial NVARCHAR,
+    Tutorial NVARCHAR(MAX),
     SolutionID INTEGER,
     FOREIGN KEY (SolutionID) REFERENCES Solution(SolutionID)
 );
@@ -145,13 +142,14 @@ CREATE TABLE Diagnose_Solution (
 -- =====================
 
 CREATE TABLE Tags (
-    TagID INTEGER PRIMARY KEY,
+    TagID INTEGER PRIMARY KEY IDENTITY(1,1),
     Tag_Name NVARCHAR(255)
 );
 
 CREATE TABLE Issue_Tag (
     IssueID INTEGER,
     TagID INTEGER,
+	PRIMARY KEY(IssueID, TagID),
     FOREIGN KEY (IssueID) REFERENCES Issues(IssueID),
     FOREIGN KEY (TagID) REFERENCES Tags(TagID)
 );

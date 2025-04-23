@@ -43,17 +43,57 @@ INSERT INTO Issues (Issue_Name, Describe, Level_, SoftwareID) VALUES
 
 -- Lỗi hardware
 
-INSERT INTO Hardware (Name_Hardware, Type_Hardware, Funtion_Hardware, CategoryID) VALUES
-(N'Máy in', N'Ngoại vi', N'In tài liệu, hình ảnh', 2),
-(N'Màn hình', N'Ngoại vi', N'Hiển thị hình ảnh, video từ máy tính', 2),
-(N'Bàn phím', N'Ngoại vi', N'Nhập liệu từ người dùng vào máy tính', 2),
-(N'Mouse', N'Ngoại vi', N'Chỉ huy con trỏ trên màn hình, thao tác với các đối tượng', 2),
-(N'Ổ cứng ngoài', N'Nội Vi', N'Lưu trữ dữ liệu, sao lưu', 2),
-(N'Memory RAM', N'Nội Vi', N'Cung cấp bộ nhớ tạm thời cho máy tính', 2),
-(N'VGA Card', N'Nội Vi', N'Xử lý đồ họa, giúp hiển thị hình ảnh trên màn hình', 2),
-(N'Motherboard', N'Nội Vi', N'Chứa các linh kiện quan trọng và kết nối các phần cứng khác trong máy tính', 2),
-(N'Pin Laptop', N'Nội Vi', N'Cung cấp năng lượng cho laptop khi không cắm sạc', 2),
-(N'Microphone', N'Ngoại vi', N'Ghi âm âm thanh từ môi trường xung quanh', 2);
+-- Lỗi liên quan đến Máy in (HardwareID = 1)
+INSERT INTO Issues (Issue_Name, Describe, Level_, SoftwareID) VALUES
+(N'Lỗi không in được', N'Máy in không nhận lệnh in hoặc không kết nối với máy tính.', N'Cao', 1),
+(N'Lỗi kẹt giấy', N'Giấy bị kẹt trong máy in, không thể tiếp tục in.', N'Trung bình', 1);
+
+-- Lỗi liên quan đến Màn hình (HardwareID = 2)
+INSERT INTO Issues (Issue_Name, Describe, Level_, SoftwareID) VALUES
+(N'Màn hình bị nhòe', N'Màn hình hiển thị bị mờ hoặc nhòe, ảnh không rõ nét.', N'Trung bình', 2),
+(N'Màn hình không lên', N'Màn hình không hiển thị gì, dù máy tính vẫn bật.', N'Cao', 2);
+
+-- Lỗi liên quan đến Bàn phím (HardwareID = 3)
+INSERT INTO Issues (Issue_Name, Describe, Level_, SoftwareID) VALUES
+(N'Lỗi phím không phản hồi', N'Một số phím trên bàn phím không hoạt động.', N'Trung bình', 3),
+(N'Lỗi kết nối USB', N'Bàn phím không nhận tín hiệu khi cắm vào máy tính.', N'Cao', 3);
+
+-- Lỗi liên quan đến Mouse (HardwareID = 4)
+INSERT INTO Issues (Issue_Name, Describe, Level_, SoftwareID) VALUES
+(N'Lỗi chuột không di chuyển', N'Chuột không phản hồi hoặc không di chuyển được trên màn hình.', N'Trung bình', 4),
+(N'Lỗi nhấp chuột', N'Nhấp chuột không hoạt động, đôi khi không nhận tín hiệu.', N'Cao', 4);
+
+-- Lỗi liên quan đến Ổ cứng ngoài (HardwareID = 5)
+INSERT INTO Issues (Issue_Name, Describe, Level_, SoftwareID) VALUES
+(N'Ổ cứng ngoài không nhận', N'Ổ cứng không được nhận diện khi kết nối với máy tính.', N'Nguy hiểm', 5),
+(N'Lỗi mất dữ liệu', N'Dữ liệu trong ổ cứng ngoài không thể truy xuất hoặc bị mất.', N'Cao', 5);
+
+-- Lỗi liên quan đến Memory RAM (HardwareID = 6)
+INSERT INTO Issues (Issue_Name, Describe, Level_, SoftwareID) VALUES
+(N'Lỗi bộ nhớ RAM', N'Máy tính báo lỗi bộ nhớ không đủ hoặc không nhận dạng bộ nhớ RAM.', N'Cao', 6),
+(N'Lỗi máy chạy chậm', N'Máy tính chạy chậm hoặc bị treo, nguyên nhân có thể do bộ nhớ RAM không đủ hoặc bị lỗi.', N'Trung bình', 6);
+
+-- Lỗi liên quan đến VGA Card (HardwareID = 7)
+INSERT INTO Issues (Issue_Name, Describe, Level_, SoftwareID) VALUES
+(N'Lỗi hiển thị đồ họa', N'VGA card không hiển thị hình ảnh, hoặc hình ảnh bị giật, mất màu.', N'Cao', 7),
+(N'Lỗi không nhận card đồ họa', N'Máy tính không nhận VGA card, không hiển thị được đồ họa.', N'Nguy hiểm', 7);
+
+-- Lỗi liên quan đến Motherboard (HardwareID = 8)
+INSERT INTO Issues (Issue_Name, Describe, Level_, SoftwareID) VALUES
+(N'Lỗi Motherboard', N'Motherboard không nhận tín hiệu hoặc không khởi động được máy tính.', N'Nguy hiểm', 8),
+(N'Lỗi kết nối các linh kiện', N'Motherboard bị lỗi khiến các linh kiện như RAM, VGA không hoạt động.', N'Cao', 8);
+
+-- Lỗi liên quan đến Pin Laptop (HardwareID = 9)
+INSERT INTO Issues (Issue_Name, Describe, Level_, SoftwareID) VALUES
+(N'Pin laptop không sạc', N'Pin không nhận sạc, laptop chỉ có thể sử dụng khi cắm nguồn điện.', N'Cao', 9),
+(N'Lỗi pin giảm nhanh', N'Pin laptop giảm nhanh chóng dù mới sạc đầy.', N'Trung bình', 9);
+
+-- Lỗi liên quan đến Microphone (HardwareID = 10)
+INSERT INTO Issues (Issue_Name, Describe, Level_, SoftwareID) VALUES
+(N'Microphone không ghi âm', N'Microphone không nhận tín hiệu âm thanh hoặc không ghi âm được.', N'Cao', 10),
+(N'Lỗi âm thanh trong', N'Microphone thu âm thanh kém, bị nhiễu hoặc không rõ.', N'Trung bình', 10);
+
+
 
 
 ----------------------------------------------
