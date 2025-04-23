@@ -176,22 +176,24 @@ INSERT INTO Issues (Issue_Name, Describe, Level_, CategoryID) VALUES
 (N'Không thể kết nối mạng LAN', N'Máy tính không nhận mạng nội bộ thông qua cáp.', N'Trung bình', 3);
 
 
+-- ============ ---
+-- Bảng Software_Issues 
+-- ============ ---
 
-
+INSERT INTO Software_Issues (SoftwareID, IssueID) VALUES
+(1, 4), -- Trình quản lý kết nối Wi-Fi có thể ảnh hưởng đến khả năng lưu tệp (mất kết nối)
+(8, 4); -- Phần mềm đọc PDF có thể xung đột với Word
+-- ============ ---
+-- 
+-- ============ ---
+INSERT INTO Hardware_Issues (HardwareID, IssueID) VALUES
+()
 
 -- ============ ---
 -- 
 -- ============ ---
-
--- ============ ---
--- 
--- ============ ---
-
-
--- ============ ---
--- 
--- ============ ---
-
+INSERT INTO Internet_Issues (InternetID, IssueID) VALUES
+()
 
 -- ============ ---
 -- 
