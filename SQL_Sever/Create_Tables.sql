@@ -106,7 +106,7 @@ CREATE TABLE Issue_Diagnose (
     FOREIGN KEY (IssueID) REFERENCES Issues(IssueID),
     FOREIGN KEY (DiagnoseID) REFERENCES Diagnose(DiagnoseID)
 );
-
+4
 CREATE TABLE Solution (
     SolutionID INTEGER PRIMARY KEY,
     Solution_Name NVARCHAR(255),

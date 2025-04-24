@@ -134,7 +134,7 @@ JOIN Solution s ON is_sol.SolutionID = s.SolutionID
 GROUP BY c.Type_
 ORDER BY TyLeThanhCongTB DESC;
 
--- 1. Truy vấn lấy top 3 lỗi phổ biến nhất cho mỗi danh mục (Hardware, Software, Internet)
+-- 18. Truy vấn lấy top 3 lỗi phổ biến nhất cho mỗi danh mục (Hardware, Software, Internet)
 -- sử dụng phân vùng (partition) và CTE
 WITH IssueCount AS (
     -- Đếm số lượng phần cứng liên quan đến từng lỗi
@@ -169,7 +169,7 @@ FROM IssueCount
 WHERE RankInCategory <= 3
 ORDER BY CategoryID, RankInCategory;
 
--- 2. Truy vấn lấy phân tích hiệu quả của các giải pháp cho từng loại lỗi
+-- 19. Truy vấn lấy phân tích hiệu quả của các giải pháp cho từng loại lỗi
 WITH SolutionEffectiveness AS (
     SELECT 
         i.Issue_Name,
@@ -197,7 +197,7 @@ FROM SolutionEffectiveness
 ORDER BY Issue_Name, SolutionRank;
 
 
--- 2. Tìm các giải pháp có tỷ lệ thành công cao nhất cho từng danh mục
+-- 20. Tìm các giải pháp có tỷ lệ thành công cao nhất cho từng danh mục
 WITH SuccessfulSolutions AS (
     SELECT
         c.Type_ AS CategoryType,
@@ -217,7 +217,7 @@ SELECT
 FROM SuccessfulSolutions
 WHERE RankInCategory = 1;
 
--- 9. Xác định giải pháp đa năng có thể áp dụng cho nhiều loại vấn đề
+-- 21. Xác định giải pháp đa năng có thể áp dụng cho nhiều loại vấn đề
 SELECT 
     s.Solution_Name,
     COUNT(DISTINCT i.IssueID) AS NumberOfIssuesResolved,
