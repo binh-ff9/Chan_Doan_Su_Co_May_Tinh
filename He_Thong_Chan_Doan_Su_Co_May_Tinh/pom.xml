@@ -38,6 +38,13 @@
             <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
+
+        <dependency>
+            <groupId>com.microsoft.sqlserver</groupId>
+            <artifactId>mssql-jdbc</artifactId>
+            <version>12.6.1.jre11</version> <!-- chọn phiên bản phù hợp với Java của bạn -->
+        </dependency>
+
     </dependencies>
 
     <build>
@@ -61,7 +68,7 @@
                         <id>default-cli</id>
                         <configuration>
                             <mainClass>
-                                org.quanligiangvien.he_thong_chan_doan_su_co_may_tinh/org.quanligiangvien.he_thong_chan_doan_su_co_may_tinh.HelloApplication
+                                org.quanligiangvien.he_thong_chan_doan_su_co_may_tinh/org.quan_li_su_co.he_thong_chan_doan_su_co_may_tinh.Views.Category_App
                             </mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>

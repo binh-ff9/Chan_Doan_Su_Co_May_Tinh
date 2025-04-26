@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.Button?>
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="org.quan_li_su_co.he_thong_chan_doan_su_co_may_tinh.Controllers.CategoryController" spacing="10" alignment="CENTER">
+    <TableView fx:id="categoryTable" prefWidth="400">
+        <columns>
+            <TableColumn fx:id="idColumn" text="ID" prefWidth="100"/>
+            <TableColumn fx:id="typeColumn" text="Type Category" prefWidth="300"/>
+        </columns>
+    </TableView>
+
+    <Button fx:id="refreshButton" text="Refresh" onAction="#handleRefresh"/>
+</VBox>

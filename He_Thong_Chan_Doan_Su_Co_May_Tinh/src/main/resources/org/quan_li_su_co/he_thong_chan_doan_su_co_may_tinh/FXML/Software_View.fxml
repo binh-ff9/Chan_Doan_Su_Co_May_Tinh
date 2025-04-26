@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="org.quan_li_su_co.he_thong_chan_doan_su_co_may_tinh.Controllers.SoftwareController"
+            prefHeight="400.0" prefWidth="600.0">
+    <TableView fx:id="softwareTableView" layoutX="20" layoutY="20" prefWidth="560" prefHeight="360">
+        <columns>
+            <TableColumn fx:id="idColumn" text="ID" prefWidth="180"/>
+            <TableColumn fx:id="typeColumn" text="Type" prefWidth="180"/>
+            <TableColumn fx:id="funtionColumn" text="Function" prefWidth="200"/>
+        </columns>
+    </TableView>
+</AnchorPane>
